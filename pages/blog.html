@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Community Forum</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center animate-pulse-slow">
+                <span class="text-white font-bold text-xl">CF</span>
+              </div>
+               <a href="../index.html" class="text-2xl font-bold text-gray-800">Community Forum</a>
+             </div>
+             
+             <div class="hidden lg:flex items-center space-x-6">
+               <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+               <a href="home2.html" class="text-gray-700 hover:text-blue-600 transition">Home2</a>
+               <a href="categories.html" class="text-gray-700 hover:text-blue-600 transition">Categories</a>
+               <a href="blog.html" class="text-blue-600 font-medium">Blog</a>
+               <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+               <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+               <a href="admin-dashboard.html" class="text-gray-700 hover:text-blue-600 transition">Admin Dashboard</a>
+               
+               <!-- Account Dropdown -->
+               <div class="relative" onmouseleave="closeAccountMenu()">
+                 <button 
+                   onclick="toggleAccountMenu()" 
+                   class="text-gray-700 hover:text-blue-600 transition flex items-center space-x-1"
+                 >
+                   <span>Account</span>
+                   <svg id="account-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                   </svg>
+                 </button>
+                 <div id="account-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                   <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Login</a>
+                   <a href="register.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Register</a>
+                 </div>
+               </div>
+             </div>
+             
+             <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-700">
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+               </svg>
+             </button>
+           </div>
+           
+           <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-2">
+             <a href="../index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+             <a href="home2.html" class="block py-2 text-gray-700 hover:text-blue-600">Home2</a>
+             <a href="categories.html" class="block py-2 text-gray-700 hover:text-blue-600">Categories</a>
+             <a href="blog.html" class="block py-2 text-blue-600">Blog</a>
+             <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+             <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+             <a href="admin-dashboard.html" class="block py-2 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
+             <div class="border-t border-gray-200 pt-2 mt-2">
+               <p class="px-2 py-1 text-sm font-semibold text-gray-500 uppercase">Account</p>
+               <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Login</a>
+               <a href="register.html" class="block py-2 text-gray-700 hover:text-blue-600">Register</a>
+             </div>
+           </div>
+        </nav>
+      </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 animate-fade-in">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-5xl font-bold mb-4 animate-slide-down">Community Blog</h1>
+          <p class="text-xl text-gray-200 animate-slide-up">Articles, updates, and announcements from our community</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Main Featured Post -->
+          <div class="lg:col-span-2">
+            <div class="card mb-8 fade-in hover:shadow-xl transition cursor-pointer" onclick="window.location.href='blog-details.html'">
+              <div class="mb-4">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Web Development Trends" class="w-full h-64 object-cover rounded-lg mb-4">
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
+                  <span class="text-sm text-gray-500">January 15, 2024</span>
+                </div>
+                <h2 class="text-3xl font-bold mb-3 text-blue-600 hover:underline">The Future of Web Development: Trends to Watch in 2024</h2>
+                <p class="text-gray-600 mb-4">Explore the emerging technologies and trends that will shape the future of web development this year. From AI integration to new frameworks, discover what's next.</p>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                      <span class="text-blue-600 font-bold">JD</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-sm">John Doe</p>
+                      <p class="text-xs text-gray-500">Community Admin</p>
+                    </div>
+                  </div>
+                  <a href="blog-details.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center transition">
+                    Read More
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Other Posts -->
+            <div class="space-y-6">
+              <div class="card fade-in hover:shadow-xl transition cursor-pointer" onclick="window.location.href='blog-details.html'">
+                <div class="flex gap-4">
+                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop" alt="Accessible Web Design" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-2 mb-2">
+                      <span class="text-sm text-gray-500">January 12, 2024</span>
+                      <span class="text-sm text-gray-500">•</span>
+                      <span class="text-sm text-gray-500">5 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-600 hover:underline">Building Accessible Web Applications</h3>
+                    <p class="text-gray-600 mb-3">Learn how to create web applications that are accessible to everyone, following WCAG guidelines and best practices.</p>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                          <span class="text-purple-600 font-bold text-xs">SM</span>
+                        </div>
+                        <span class="text-sm text-gray-600">Sarah Miller</span>
+                      </div>
+                      <a href="blog-details.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center transition">
+                        Read More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card fade-in hover:shadow-xl transition cursor-pointer" onclick="window.location.href='blog-details.html'">
+                <div class="flex gap-4">
+                  <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=200&h=200&fit=crop" alt="TypeScript Code" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-2 mb-2">
+                      <span class="text-sm text-gray-500">January 10, 2024</span>
+                      <span class="text-sm text-gray-500">•</span>
+                      <span class="text-sm text-gray-500">7 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-600 hover:underline">Introduction to TypeScript for JavaScript Developers</h3>
+                    <p class="text-gray-600 mb-3">A comprehensive guide to TypeScript for developers familiar with JavaScript. Learn the benefits and how to get started.</p>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                          <span class="text-green-600 font-bold text-xs">MJ</span>
+                        </div>
+                        <span class="text-sm text-gray-600">Mike Johnson</span>
+                      </div>
+                      <a href="blog-details.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center transition">
+                        Read More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card fade-in hover:shadow-xl transition cursor-pointer" onclick="window.location.href='blog-details.html'">
+                <div class="flex gap-4">
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=200&h=200&fit=crop" alt="Community Contributors" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-2 mb-2">
+                      <span class="text-sm text-gray-500">January 8, 2024</span>
+                      <span class="text-sm text-gray-500">•</span>
+                      <span class="text-sm text-gray-500">4 min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-600 hover:underline">Community Spotlight: Top Contributors of 2023</h3>
+                    <p class="text-gray-600 mb-3">Celebrating the amazing contributors who made our community thrive in 2023. Meet the people behind the best discussions.</p>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                          <span class="text-blue-600 font-bold text-xs">JD</span>
+                        </div>
+                        <span class="text-sm text-gray-600">John Doe</span>
+                      </div>
+                      <a href="blog-details.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center transition">
+                        Read More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-8 flex justify-center space-x-2">
+              <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">Previous</button>
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">1</button>
+              <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">2</button>
+              <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">3</button>
+              <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">Next</button>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:col-span-1">
+            <!-- Search -->
+            <div class="card mb-6 fade-in">
+              <h3 class="font-bold mb-4">Search Blog</h3>
+              <div class="relative">
+                <input type="text" placeholder="Search articles..." class="w-full px-4 py-2 pl-10 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none">
+                <svg class="w-5 h-5 text-gray-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="card mb-6 fade-in">
+              <h3 class="font-bold mb-4">Categories</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-gray-600 hover:text-blue-600 transition flex items-center justify-between"><span>Technology</span> <span class="bg-gray-100 px-2 py-1 rounded text-xs">12</span></a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-600 transition flex items-center justify-between"><span>Tutorials</span> <span class="bg-gray-100 px-2 py-1 rounded text-xs">8</span></a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-600 transition flex items-center justify-between"><span>Updates</span> <span class="bg-gray-100 px-2 py-1 rounded text-xs">5</span></a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-600 transition flex items-center justify-between"><span>Community</span> <span class="bg-gray-100 px-2 py-1 rounded text-xs">9</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="card mb-6 fade-in">
+              <h3 class="font-bold mb-4">Recent Posts</h3>
+              <ul class="space-y-3">
+                <li class="border-b pb-3">
+                  <a href="blog-details.html" class="text-sm font-semibold text-blue-600 hover:underline">The Future of Web Development</a>
+                  <p class="text-xs text-gray-500 mt-1">January 15, 2024</p>
+                </li>
+                <li class="border-b pb-3">
+                  <a href="blog-details.html" class="text-sm font-semibold text-blue-600 hover:underline">Building Accessible Web Apps</a>
+                  <p class="text-xs text-gray-500 mt-1">January 12, 2024</p>
+                </li>
+                <li>
+                  <a href="blog-details.html" class="text-sm font-semibold text-blue-600 hover:underline">Introduction to TypeScript</a>
+                  <p class="text-xs text-gray-500 mt-1">January 10, 2024</p>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="card bg-gradient-to-r from-blue-600 to-purple-600 text-white fade-in">
+              <h3 class="font-bold mb-2">Subscribe to Newsletter</h3>
+              <p class="text-sm text-blue-100 mb-4">Get the latest articles and updates delivered to your inbox.</p>
+              <form>
+                <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg mb-3 text-gray-900">
+                <button type="submit" class="w-full bg-white text-blue-600 font-semibold py-2 rounded-lg hover:bg-gray-100 transition">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-xl">CF</span>
+              </div>
+              <span class="text-xl font-bold">Community Forum</span>
+            </div>
+            <p class="text-gray-400">Building connections, sharing knowledge, growing together.</p>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="../index.html" class="hover:text-white transition">Home</a></li>
+              <li><a href="categories.html" class="hover:text-white transition">Categories</a></li>
+              <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+              <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Community</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white transition">Guidelines</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+              <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition" aria-label="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition" aria-label="Twitter">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition" aria-label="Instagram">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 Community Forum. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

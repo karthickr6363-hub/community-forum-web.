@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Forum - Niche Community</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center animate-pulse-slow">
+                <span class="text-white font-bold text-xl">CF</span>
+              </div>
+              <a href="../index.html" class="text-2xl font-bold text-gray-800">Community Forum</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-6">
+              <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+              <a href="home2.html" class="text-blue-600 font-medium">Home2</a>
+              <a href="categories.html" class="text-gray-700 hover:text-blue-600 transition">Categories</a>
+              <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+              <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+              <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+              <a href="admin-dashboard.html" class="text-gray-700 hover:text-blue-600 transition">Admin Dashboard</a>
+              
+              <!-- Account Dropdown -->
+              <div class="relative" onmouseleave="closeAccountMenu()">
+                <button 
+                  onclick="toggleAccountMenu()" 
+                  class="text-gray-700 hover:text-blue-600 transition flex items-center space-x-1"
+                >
+                  <span>Account</span>
+                  <svg id="account-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div id="account-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Login</a>
+                  <a href="register.html" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Register</a>
+                </div>
+              </div>
+            </div>
+            
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-700">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-2">
+            <a href="../index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="home2.html" class="block py-2 text-blue-600">Home2</a>
+            <a href="categories.html" class="block py-2 text-gray-700 hover:text-blue-600">Categories</a>
+            <a href="blog.html" class="block py-2 text-gray-700 hover:text-blue-600">Blog</a>
+            <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+            <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            <a href="admin-dashboard.html" class="block py-2 text-gray-700 hover:text-blue-600">Admin Dashboard</a>
+            <div class="border-t border-gray-200 pt-2 mt-2">
+              <p class="px-2 py-1 text-sm font-semibold text-gray-500 uppercase">Account</p>
+              <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Login</a>
+              <a href="register.html" class="block py-2 text-gray-700 hover:text-blue-600">Register</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <!-- Hero Section - Niche Style -->
+    <section class="bg-gradient-to-r from-green-600 via-blue-600 to-indigo-600 text-white py-24 animate-fade-in">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 animate-slide-down">
+            <span class="text-sm font-semibold">👨‍💻 Developer Community</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-down">Code. Share. Grow.</h1>
+          <p class="text-xl mb-8 text-gray-100 animate-slide-up">Join thousands of developers sharing code, solving problems, and building the future together</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-green-600 font-semibold py-4 px-10 rounded-lg hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl text-lg">
+              Start Coding
+            </button>
+            <button class="bg-transparent border-2 border-white text-white font-semibold py-4 px-10 rounded-lg hover:bg-white hover:text-green-600 transition text-lg">
+              Browse Projects
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="fade-in">
+            <div class="text-4xl font-bold text-green-600 mb-2">12.5K+</div>
+            <div class="text-gray-600">Active Developers</div>
+          </div>
+          <div class="fade-in">
+            <div class="text-4xl font-bold text-blue-600 mb-2">45K+</div>
+            <div class="text-gray-600">Code Snippets</div>
+          </div>
+          <div class="fade-in">
+            <div class="text-4xl font-bold text-indigo-600 mb-2">8.2K+</div>
+            <div class="text-gray-600">Projects Shared</div>
+          </div>
+          <div class="fade-in">
+            <div class="text-4xl font-bold text-purple-600 mb-2">156K+</div>
+            <div class="text-gray-600">Solutions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Code Snippets -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4 fade-in">Featured Code Snippets</h2>
+        <p class="text-center text-gray-600 mb-12 fade-in">Popular solutions from our community</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card fade-in hover:scale-105 cursor-pointer border-l-4 border-green-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-green-600 font-bold">AD</span>
+              </div>
+              <div>
+                <p class="font-semibold">Alex Developer</p>
+                <p class="text-sm text-gray-500">JavaScript • 1 hour ago</p>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-green-600">React Hook for API Calls</h3>
+            <div class="bg-gray-900 text-green-400 p-4 rounded-lg mb-4 font-mono text-sm overflow-x-auto">
+              <pre>const useApi = (url) => {
+  const [data, setData] = useState(null);
+  // ... implementation
+}</pre>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> 18</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 234</span>
+              </div>
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">React</span>
+            </div>
+          </div>
+
+          <div class="card fade-in hover:scale-105 cursor-pointer border-l-4 border-blue-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-blue-600 font-bold">JS</span>
+              </div>
+              <div>
+                <p class="font-semibold">Jane Smith</p>
+                <p class="text-sm text-gray-500">Python • 3 hours ago</p>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-blue-600">Fast API Endpoint Pattern</h3>
+            <div class="bg-gray-900 text-blue-400 p-4 rounded-lg mb-4 font-mono text-sm overflow-x-auto">
+              <pre>@app.get("/api/data")
+async def get_data():
+    return {"status": "ok"}</pre>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> 32</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 189</span>
+              </div>
+              <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Python</span>
+            </div>
+          </div>
+
+          <div class="card fade-in hover:scale-105 cursor-pointer border-l-4 border-purple-500">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-purple-600 font-bold">MD</span>
+              </div>
+              <div>
+                <p class="font-semibold">Mike Dev</p>
+                <p class="text-sm text-gray-500">TypeScript • 5 hours ago</p>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-purple-600">Type-Safe API Client</h3>
+            <div class="bg-gray-900 text-purple-400 p-4 rounded-lg mb-4 font-mono text-sm overflow-x-auto">
+              <pre>interface ApiResponse&lt;T&gt; {
+  data: T;
+  status: number;
+}</pre>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> 27</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 312</span>
+              </div>
+              <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 fade-in">Explore by Technology</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-green-500">
+            <div class="text-4xl mb-3">⚛️</div>
+            <h3 class="font-semibold">React</h3>
+            <p class="text-sm text-gray-500">2.1k posts</p>
+          </a>
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-blue-500">
+            <div class="text-4xl mb-3">🐍</div>
+            <h3 class="font-semibold">Python</h3>
+            <p class="text-sm text-gray-500">1.8k posts</p>
+          </a>
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-yellow-500">
+            <div class="text-4xl mb-3">📘</div>
+            <h3 class="font-semibold">Node.js</h3>
+            <p class="text-sm text-gray-500">1.5k posts</p>
+          </a>
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-purple-500">
+            <div class="text-4xl mb-3">💜</div>
+            <h3 class="font-semibold">Vue.js</h3>
+            <p class="text-sm text-gray-500">1.2k posts</p>
+          </a>
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-red-500">
+            <div class="text-4xl mb-3">⚡</div>
+            <h3 class="font-semibold">Next.js</h3>
+            <p class="text-sm text-gray-500">980 posts</p>
+          </a>
+          <a href="topics.html" class="card text-center hover:scale-110 transition transform fade-in border-2 border-transparent hover:border-indigo-500">
+            <div class="text-4xl mb-3">🔷</div>
+            <h3 class="font-semibold">Angular</h3>
+            <p class="text-sm text-gray-500">756 posts</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-xl">DF</span>
+              </div>
+              <span class="text-xl font-bold">Dev Forum</span>
+            </div>
+            <p class="text-gray-400">Code. Share. Grow. Together.</p>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="../index.html" class="hover:text-white transition">Home</a></li>
+              <li><a href="categories.html" class="hover:text-white transition">Categories</a></li>
+              <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+              <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Community</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white transition">Guidelines</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+              <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition" aria-label="Twitter">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition" aria-label="GitHub">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.36-1.34-3.36-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.089 2.91.835.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.592 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.687.481C21.133 20.197 24 16.44 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 Dev Forum. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
